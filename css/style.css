@@ -17,8 +17,8 @@ body{
 }
 
 .rent-time{
-	text-transform: uppercase;
-	display: block;
+  text-transform: uppercase;
+  display: block;
   margin-left: 22px;
   position: relative;
   top: 19%;
@@ -26,19 +26,19 @@ body{
 }
 
 .rent-time__text{
-	position: absolute;
+  position: absolute;
   top: 10px;
   left: 44px;
 }
 
 .rent-time__text::before{
-	content:"";
-	background-image: url('../img/calend.png');
-	background-repeat: no-repeat;
-	width: 18px;
-	height: 18px;
-	position: absolute;
-	left: -22px;
+  content:"";
+  background-image: url('../img/calend.png');
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: -22px;
 }
 
 .active{
@@ -72,27 +72,27 @@ body{
 
 /*content start*/
 .content{
-	max-width: 1280px;
-	margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .car-item{
-	width: 298px;
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	margin-left: 10px;
-	box-sizing: border-box;
-	margin-bottom: 40px;
+  width: 298px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-left: 10px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .car-item__img{
-	width: 298px;
-	height: 181px;
+  width: 298px;
+  height: 181px;
 }
 
 .car-item__price{
-	width: 83px;
+  width: 83px;
   height: 35px;
   position: absolute;
   right: 0px;
@@ -102,33 +102,33 @@ body{
 }
 
 .car-item__address{
-	color: #8b8b8b;
+  color: #8b8b8b;
 }
 
 .car-item__casco, .car-item__osago{
-	padding: 5px 14px 5px 11px;
-	display: inline-block;
-	color: #d2d2d2;
-	background: #e8e8e8;
+  padding: 5px 14px 5px 11px;
+  display: inline-block;
+  color: #d2d2d2;
+  background: #e8e8e8;
 }
 
 .isactive{
-	background: #fdcd00;
-	color: #000;
+  background: #fdcd00;
+  color: #000;
 }
 
 .car-item__stars{
-	background-image: url('../img/starz.png');
-	background-repeat: no-repeat;
-	width: 70px;
-	height: 12px;
-	float: right;
+  background-image: url('../img/starz.png');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 12px;
+  float: right;
 }
 
 .heart{
-	fill: #fff;
-	width: 18px;
-	position: absolute;
+  fill: #fff;
+  width: 18px;
+  position: absolute;
   right: 11px;
   top: 20px;
 }
@@ -168,18 +168,18 @@ body{
 }
 
 .time-filter__form {
-	text-align: center;
+  text-align: center;
 }
 
 .time-filter__begin{
-	border: 1px solid #d1d1d1;
-	height: 39px;
+  border: 1px solid #d1d1d1;
+  height: 39px;
   text-align: center;
   border-radius: 26px;
 }
 
 .time-filter__end{
-	border: 1px solid #d1d1d1;
+  border: 1px solid #d1d1d1;
   height: 39px;
   width: 217px;
   text-align: center;
@@ -189,13 +189,13 @@ body{
 }
 
 .time-filter__reset{
-	color:#00a9a4;
-	text-transform: uppercase;
-	border:0;
-	background: #fff;
-	display: block;
-	margin: 0 auto;
-	margin-top: 71px;
+  color:#00a9a4;
+  text-transform: uppercase;
+  border:0;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+  margin-top: 71px;
 }
 
 .time-filter__reset:focus, .time-filter__submit:focus, .time-filter__begin:focus, .time-filter__end:focus{
