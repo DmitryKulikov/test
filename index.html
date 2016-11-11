@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Каталог авто</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/cars.controller.js"></script>
+	<script src="js/cars.service.js"></script>
+	<script src="js/cars.filter.js"></script>
+</head>
+<body ng-app="cars" ng-controller="carsCtrl">
+	<header class="header">
+		<div class="header-top">
+			<div class="rent-time" ng-class="{active : isOpened}" ng-click="showFilter()">
+				<span class="rent-time__text">Время аренды</span>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<span class="filter__text">Всего предложений</span>
+			<span class="filter__value">{{cars.length}},</span>
+			<span class="filter__text">отфильтровано</span>
+			<span class="filter__value">{{ filtered.length }}</span>
+		</div>
+		<div class="time-filter" ng-show="isOpened">
+			<div class="time-filter__close" ng-click="closeFilter()"></div>
+			<h2 class="time-filter__title">Время аренды</h2>
+		<form ng-submit="submitFilter()" class="time-filter__form">
+			<label for="begin">Начало</label>
+			<input type="datetime-local" name="bdaytime" id="begin" ng-model="startDate" class="time-filter__begin"><br>
+			<label for="end">Окончание</label>
+			<input type="datetime-local" name="bdaytime" id="end" ng-model="endDate" class="time-filter__end">
+			<input type="reset" value="сбросить параметры" class="time-filter__reset">
+			<input type="submit" value="найти" class="time-filter__submit">
+		</form>	
+		</div>
+	</header>
+	<div class="content">
+		<div class="car-item" ng-repeat="car in cars | myfilter: startDate: endDate as filtered">
+			<svg class="heart" viewBox="0 0 32 29.6" ng-if="car.favorite">
+			  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+				c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+			</svg>
+			<img ng-src="{{car.images.mainImageFull}}" class="car-item__img">
+			<div class="car-item__price">
+				<span>{{car.priceDay}}</span>
+				<span>&#8381;</span><br>
+				<span>в сутки</span>
+			</div>
+			<div class="car-item__model">
+				<span class="car-item__brand-name">{{car.brandName}}</span>
+				<span class="car-item__model-name">{{car.modelName}},</span>
+				<span class="car-item__model-name">{{car.year}}</span>
+			</div>
+			<div class="car-item__address">
+				{{car.address}}
+			</div>
+			<div class="car-item__rent-free">
+				{{car.rentEndDate | date:'dd-MM-yyyy'}}
+			</div>		
+			<div class="car-item__casco" ng-class="{isactive : car.casco}">Каско</div>
+			<div class="car-item__osago" ng-class="{isactive : car.osago}">Осаго</div>
+			<div class="car-item__stars"></div>	
+		</div>	
+	</div>
+	<div class="overlay" ng-click="closeFilter()" ng-show="isOpened"></div>
+</body>
+</html>

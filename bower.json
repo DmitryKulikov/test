@@ -1,0 +1,19 @@
+{
+  "name": "tasks",
+  "version": "0.0.0",
+  "authors": [
+    "dmitrijkulikov <dichmail@mail.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~5.0.0",
+    "angular": "~1.5.8"
+  }
+}
